@@ -1,4 +1,4 @@
-package com.formacionbdi.springboot.app.usuarios.commons.models.entity;
+package com.formacionbdi.springboot.app.commons.usuarios.models.entity;
 
 import java.io.Serializable;
 import java.util.List;
@@ -42,7 +42,7 @@ public class Usuario implements Serializable{
 	@Column(unique = true)
 	private String email;
 	
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "usuarios_roles", joinColumns = @JoinColumn(name = "usuario_id"), 
 	inverseJoinColumns = @JoinColumn(name = "role_id"),
 	uniqueConstraints = {@UniqueConstraint(columnNames = {"usuario_id", "role_id"})})
