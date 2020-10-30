@@ -41,7 +41,7 @@ public class Usuario implements Serializable{
 	private String apellido;
 	@Column(unique = true)
 	private String email;
-	
+	private Integer intentos;
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "usuarios_roles", joinColumns = @JoinColumn(name = "usuario_id"), 
 	inverseJoinColumns = @JoinColumn(name = "role_id"),
